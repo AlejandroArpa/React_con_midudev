@@ -33,6 +33,42 @@
   border-radius: 999px;
   padding-left: 6px 16px;
   font-weight: bold;
+  cursor: pointer;
+  transition: .5s ease background-color;
+}
+
+.btnText{
+  display: block;
+  } 
+
+
+.stopFollow{
+  display: none;
+} 
+
+
+.tw-followCard-button.is-following {
+  border: 1px solid red;
+  width: 100px;
+}
+
+.tw-followCard-button.is-following:hover{
+  background-color: red;
+}
+
+.tw-followCard-button.is-following:hover .stopFollow{
+  display: block !important ; 
+  cursor:pointer;
+}
+
+.tw-followCard-button.is-following:hover .btnText{
+  display: none;
+}
+
+
+.tw-followCard-button:hover {
+  background-color: #09f;
+  transition: .5s ease background-color;
 }
 
 .App{

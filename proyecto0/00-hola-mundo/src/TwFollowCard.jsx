@@ -1,7 +1,19 @@
 import React from 'react'
 import './App.css'
+import { useState } from 'react'
 
-function TwFollowCard({formatUserName, userName, name, isFollowing}) {
+function TwFollowCard({formatUserName, userName, name}) {
+  const [isFollowing,setIsFollowing] = useState(false)
+
+  const handleClick = () => {
+    setIsFollowing(!isFollowing)
+  }
+
+  const text = isFollowing ? 'siguiendo' : 'seguir'
+  const buttonClassName = isFollowing 
+    ? 'tw-followCard-button is-following'
+    : 'tw-followCard-button'
+
   return (
     <article className='tw-followCard'>
       <header className='tw-followCard-header'>
@@ -16,8 +28,9 @@ function TwFollowCard({formatUserName, userName, name, isFollowing}) {
       </header>
 
       <aside>
-        <button className='tw-followCard-button'>
-          Seguir
+        <button className={buttonClassName} onClick={handleClick}>
+          <span className='btnText'>{text}</span>
+          <span className='stopFollow'> dejar de seguir</span>
         </button>
       </aside>
     </article>
